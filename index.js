@@ -31,7 +31,7 @@ async function getDate() {
 }
 
 async function accessPuppeteer() {
-  const browser = await puppeteer.launch();
+  const browser = await puppeteer.launch({ args: ['--no-sandbox'] });
   const page = await browser.newPage();
 
   //access flash deal page
