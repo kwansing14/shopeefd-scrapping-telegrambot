@@ -11,7 +11,7 @@ let date;
 let selection = null;
 
 async function getDate() {
-  const browser = await puppeteer.launch();
+  const browser = await puppeteer.launch({args: ['--no-sandbox', '--disable-setuid-sandbox']});
   const page = await browser.newPage();
   //access flash deal page
   await page.goto('https://shopee.sg/flash_deals');
